@@ -1,8 +1,10 @@
-import { Pool } from 'pg';
+import { Pool } from "pg";
 
-export default new Pool({
+const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
   ssl: {
     rejectUnauthorized: false,
   },
 });
+
+export default pool;
